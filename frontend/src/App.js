@@ -10,12 +10,12 @@ import Users from './components/Users/Users';
 import Catalog from './components/Catalog/Catalog';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import './App.css';
-import {Route, Redirect, Switch} from 'react-router-dom';
+import {Route, Redirect, Switch, withRouter} from 'react-router-dom';
 
 class App extends React.Component {
 
   render(){
-    const isLoginPage = window.location.pathname === '/login';
+    const isLoginPage = this.props.location.pathname === '/login';
 
     return (
       <div className="App">
@@ -38,4 +38,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default withRouter(App);

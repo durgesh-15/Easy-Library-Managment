@@ -1,6 +1,6 @@
 import React from 'react';
 import './Nav.css';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class Nav extends React.Component {
 
@@ -23,11 +23,11 @@ class Nav extends React.Component {
     }
 
     isActive(path) {
-        return window.location.pathname === path ? 'active' : '';
+        return this.props.location.pathname === path ? 'active' : '';
     }
 
     render(){
-        if(window.location.pathname === '/login')
+        if(this.props.location.pathname === '/login')
             return null;
 
         const token = localStorage.getItem('token');
@@ -39,7 +39,7 @@ class Nav extends React.Component {
 
         return (
             <div id='nav'>
-                <span id="brand">LIBRARY MANAGEMENT SYSTEM</span>
+                <span id="brand">EASY LIBRARY MANAGEMENT SYSTEM</span>
                 <ul>
                     <li className={this.isActive('/dashboard')}><Link to='/dashboard' onClick={this.update}>Dashboard</Link></li>
                     {role === 'admin' &&
@@ -62,4 +62,4 @@ class Nav extends React.Component {
     }
 }
 
-export default Nav;
+export default withRouter(Nav);
