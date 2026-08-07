@@ -38,7 +38,7 @@ class Login extends React.Component {
         return (
             <div id="login">
                 <form onSubmit={this.handleSubmit}>
-                    <h2>Library Login</h2>
+                    <h2>Esay Library Managment System</h2>
                     {this.state.error && <p className="error">{this.state.error}</p>}
                     <input
                         className="form-control"
