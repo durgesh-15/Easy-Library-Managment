@@ -1,0 +1,23 @@
+#catalog {
+    text-align: center;
+}
+
+#catalog .form-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+#catalog .form-row input {
+    width: 160px;
+}
+
+#catalog .error {
+    color: #d32f2f;
+}
+
+#catalog .message {
+    color: #2e7d32;
+}
